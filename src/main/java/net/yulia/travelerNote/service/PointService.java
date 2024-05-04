@@ -1,9 +1,9 @@
 package net.yulia.travelerNote.service;
 
-import net.yulia.travelerNote.dto.PointDto;
+import net.yulia.travelerNote.entity.Point;
 
 public interface PointService {
-    PointDto createPoint(PointDto pointDto);
+    Point createPoint(Point point);
 
-    PointDto getPointById(Long pointId);
+    Point getPointById(Long pointId);
 }
