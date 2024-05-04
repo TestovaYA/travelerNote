@@ -18,4 +18,10 @@ public class PointController {
         PointDto savedPoint = pointService.createPoint(pointDto);
         return new ResponseEntity<>(savedPoint, HttpStatus.CREATED);
     }
+
+    @GetMapping("{id}")
+    public ResponseEntity<PointDto> getPointById(@PathVariable("id") Long pointId) {
+        PointDto point = pointService.getPointById(pointId);
+        return ResponseEntity.ok(point);
+    }
 }

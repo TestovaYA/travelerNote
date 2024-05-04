@@ -4,4 +4,6 @@ import net.yulia.travelerNote.dto.PointDto;
 
 public interface PointService {
     PointDto createPoint(PointDto pointDto);
+
+    PointDto getPointById(Long pointId);
 }
