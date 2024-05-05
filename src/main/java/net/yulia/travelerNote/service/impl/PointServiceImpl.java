@@ -33,4 +33,10 @@ public class PointServiceImpl implements PointService {
     public Point updatePoint(Point point) {
         return pointRepository.save(point);
     }
+
+    @Override
+    public void deletePointById(Long pointId) {
+        pointRepository.findById(pointId).orElseThrow(()->new ResourceNotFoundException("Point with the given id does not exist. id: " + pointId));
+        pointRepository.deleteById(pointId);
+    }
 }

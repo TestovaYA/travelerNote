@@ -38,4 +38,10 @@ public class PointController {
         Point updatedPoint = pointService.updatePoint(point);
         return ResponseEntity.ok(updatedPoint);
     }
+
+    @DeleteMapping("{id}")
+    public ResponseEntity<String> deletePointByIf(@PathVariable("id") Long pointId){
+        pointService.deletePointById(pointId);
+        return ResponseEntity.ok("Point deleted successfully");
+    }
 }
