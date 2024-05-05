@@ -7,6 +7,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/api/points")
 @AllArgsConstructor
@@ -23,5 +25,11 @@ public class PointController {
     public ResponseEntity<Point> getPointById(@PathVariable("id") Long pointId) {
         Point point = pointService.getPointById(pointId);
         return ResponseEntity.ok(point);
+    }
+
+    @GetMapping
+    public ResponseEntity<List<Point>> getAllPoints(){
+        List<Point> allPoints = pointService.getAllPoints();
+        return ResponseEntity.ok(allPoints);
     }
 }

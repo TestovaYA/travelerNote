@@ -7,6 +7,8 @@ import net.yulia.travelerNote.repository.PointRepository;
 import net.yulia.travelerNote.service.PointService;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 @AllArgsConstructor
 public class PointServiceImpl implements PointService {
@@ -20,5 +22,10 @@ public class PointServiceImpl implements PointService {
     @Override
     public Point getPointById(Long pointId) {
         return pointRepository.findById(pointId).orElseThrow(()->new ResourceNotFoundException("Point with the given id does not exist. id: " + pointId));
+    }
+
+    @Override
+    public List<Point> getAllPoints() {
+        return pointRepository.findAll();
     }
 }
