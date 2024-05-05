@@ -8,7 +8,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("/api/point")
+@RequestMapping("/api/points")
 @AllArgsConstructor
 public class PointController {
     PointService pointService;
