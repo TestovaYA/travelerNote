@@ -10,4 +10,6 @@ public interface PointService {
     Point getPointById(Long pointId);
 
     List<Point> getAllPoints();
+
+    Point updatePoint(Point point);
 }

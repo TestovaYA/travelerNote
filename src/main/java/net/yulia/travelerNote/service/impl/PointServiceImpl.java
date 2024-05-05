@@ -28,4 +28,9 @@ public class PointServiceImpl implements PointService {
     public List<Point> getAllPoints() {
         return pointRepository.findAll();
     }
+
+    @Override
+    public Point updatePoint(Point point) {
+        return pointRepository.save(point);
+    }
 }

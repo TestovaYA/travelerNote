@@ -32,4 +32,10 @@ public class PointController {
         List<Point> allPoints = pointService.getAllPoints();
         return ResponseEntity.ok(allPoints);
     }
+
+    @PutMapping("/update")
+    public ResponseEntity<Point> updatePoint(@RequestBody Point point){
+        Point updatedPoint = pointService.updatePoint(point);
+        return ResponseEntity.ok(updatedPoint);
+    }
 }
